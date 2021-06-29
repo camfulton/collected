@@ -3,7 +3,8 @@
 - Set up a postgres DB and configure `DATABASE` settings in collected/settings.py
 - `make install` to set up local deps (creates a virtualenv for you).
 - `source .collected/bin/activate` to activate the virtualenv.
-- `make migrate` to apply migrations to your database. 
+- `make migrate` to apply migrations to your database.
+- Download `https://mtgjson.com/api/v5/AllPrintings.json` this file and put it in the same directory level as this README.md file.
 - `make loaddb` to load up all the cards (will take a while, sorry).
 - `make start` to run a local server.
 
