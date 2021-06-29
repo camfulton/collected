@@ -4,15 +4,16 @@
 - `make install` to set up local deps (creates a virtualenv for you).
 - `source .collected/bin/activate` to activate the virtualenv.
 - `make migrate` to apply migrations to your database.
-- Download `https://mtgjson.com/api/v5/AllPrintings.json` this file and put it in the same directory level as this README.md file.
-- `make loaddb` to load up all the cards (will take a while, sorry).
+- Download the `JSON` file from [this link](https://mtgjson.com/downloads/all-files/#allprintings) and put it in the same directory level as this README.md file.
+- `make loaddb` to load up all the cards.
+- Take a short walk or read the rest of this README while the database populates from the JSON file.
 - `make start` to run a local server.
 
 ## Use:
 - You have to sign up and I put approximately 0 effort into making that a nice experience.
-- http://127.0.0.1:8000/account/register/
+- [http://127.0.0.1:8000/account/register/](http://127.0.0.1:8000/account/register/)
 - The activation link prints to the terminal--paste it into your browser.
-- http://127.0.0.1:8000/account/login/
+- [http://127.0.0.1:8000/account/login/](http://127.0.0.1:8000/account/login/)
 - Click the `collections` link and then `Create New Global Cards Collection` (I think this is the only one that actually works).
 - Marvel at the totally unstyled Django form.
 - "Name" can be anything -- it'll be the name of the collection in the list view.
@@ -48,7 +49,7 @@ The bulk of the code exists on the models:
 - collection/models.py
 - mtg/models.py
 
-This script loads the database from a JSON file provided by https://mtgjson.com/
+This script loads the database from a JSON file provided by [https://mtgjson.com/](https://mtgjson.com/)
 It does some sanitization and reorganizing of the data to make it fit my purpose here
 a bit better.
 
