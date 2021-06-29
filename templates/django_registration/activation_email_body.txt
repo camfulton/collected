@@ -1,0 +1,7 @@
+Hello,
+
+You or someone who thinks this is their email address registered an account on Collected.
+
+Please click this link to activate your account: 127.0.0.1:8000/account/activate/{{ activation_key }}
+
+Thanks!

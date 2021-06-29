@@ -1,0 +1,13 @@
+<h1>Here are all of your collections...</h1>
+
+{% for collection in collections %}
+    <a href='{{collection.id}}'>{{ collection.name }}</a>
+{% endfor %}
+
+<h1>New?</h1>
+<h2>Global</h2>
+<a href='new/global_cards'>Create New Global Cards Collection</a><br>
+<a href='new/global_sets'>Create New Global Sets Collection</a><br>
+<h2>Normal</h2>
+<a href='new/cards'>Create New Cards Collection</a><br>
+<a href='new/sets'>Create New Sets Collection</a><br>

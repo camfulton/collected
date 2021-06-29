@@ -1,0 +1,7 @@
+<h1>Login</h1>
+
+<form action='/account/login/', method='post'>
+    {% csrf_token %}
+    {{ form }}
+    <input type='submit' value='Submit'>
+</form>

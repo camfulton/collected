@@ -1,0 +1,164 @@
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    .section-start {
+        border: 1px solid #4a6d7c;
+    }
+    .card_name {
+        color: #89CE94;
+    }
+    .collected {
+        background-color: #89CE94;
+    }
+    .not-collected {
+        background-color: #9D6381;
+    }
+    .doesnt-exist {
+        background-color: #191716;
+    }
+    .wont-collect {
+        background-color: #191716c9;
+    }
+    td {
+        border: 1px solid #191716;
+        color: #F8F0FB;
+    }
+    body {
+        background-color: #0F0014;
+    }
+    thead td {
+        border: 1px solid #4a6d7c;
+    }
+
+    thead, tfoot {
+        background-color: #191716;
+        color: #F8F0FB;
+        text-align: center;
+    }
+</style>
+
+{% for card_name, sets in collection.table_data.items %}
+    <table>
+        <colgroup>
+            <col width="50">
+            <col width="250">
+            <col width="50">
+            <col width="150">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+            <col width="35">
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <td class='card_name'><b>{{ card_name }}</b></td>
+                <td></td>
+                <td></td>
+                <td colspan="2">English</td>
+                <td colspan="2">French</td>
+                <td colspan="2">German</td>
+                <td colspan="2">Italian</td>
+                <td colspan="2">Japanese</td>
+                <td colspan="2">Korean</td>
+                <td colspan="2">Portuguese</td>
+                <td colspan="2">Russian</td>
+                <td colspan="2">S. Chinese</td>
+                <td colspan="2">Spanish</td>
+                <td colspan="2">T. Chinese</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Set</td>
+                <td>#</td>
+                <td>Artist</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+                <td>N</td>
+                <td>F</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for set_code, set in sets.items %}
+                {% for uuid, printing in set.printings.items %}
+                    <tr>
+                        <td>[]</td>
+                        <td>{{ set.set_name }}</td>
+                        <td>{{ printing.number }}</td>
+                        <td>{{ printing.artist }}</td>
+
+                        <td class='{% if not printing.english_False %}doesnt-exist{% elif printing.english_False.wont_collect %}wont-collect{% elif printing.english_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.english_True %}doesnt-exist{% elif printing.english_True.wont_collect %}wont-collect{% elif printing.english_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.french_False %}doesnt-exist{% elif printing.french_False.wont_collect %}wont-collect{% elif printing.french_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.french_True %}doesnt-exist{% elif printing.french_True.wont_collect %}wont-collect{% elif printing.french_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.german_False %}doesnt-exist{% elif printing.german_False.wont_collect %}wont-collect{% elif printing.german_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.german_True %}doesnt-exist{% elif printing.german_True.wont_collect %}wont-collect{% elif printing.german_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.italian_False %}doesnt-exist{% elif printing.italian_False.wont_collect %}wont-collect{% elif printing.italian_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.italian_True %}doesnt-exist{% elif printing.italian_True.wont_collect %}wont-collect{% elif printing.italian_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.japanese_False %}doesnt-exist{% elif printing.japanese_False.wont_collect %}wont-collect{% elif printing.japanese_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.japanese_True %}doesnt-exist{% elif printing.japanese_True.wont_collect %}wont-collect{% elif printing.japanese_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.korean_False %}doesnt-exist{% elif printing.korean_False.wont_collect %}wont-collect{% elif printing.korean_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.korean_True %}doesnt-exist{% elif printing.korean_True.wont_collect %}wont-collect{% elif printing.korean_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.portuguese_False %}doesnt-exist{% elif printing.portuguese_False.wont_collect %}wont-collect{% elif printing.portuguese_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.portuguese_True %}doesnt-exist{% elif printing.portuguese_True.wont_collect %}wont-collect{% elif printing.portuguese_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.russian_False %}doesnt-exist{% elif printing.russian_False.wont_collect %}wont-collect{% elif printing.russian_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.russian_True %}doesnt-exist{% elif printing.russian_True.wont_collect %}wont-collect{% elif printing.russian_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.s_chinese_False %}doesnt-exist{% elif printing.s_chinese_False.wont_collect %}wont-collect{% elif printing.s_chinese_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.s_chinese_True %}doesnt-exist{% elif printing.s_chinese_True.wont_collect %}wont-collect{% elif printing.s_chinese_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.spanish_False %}doesnt-exist{% elif printing.spanish_False.wont_collect %}wont-collect{% elif printing.spanish_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.spanish_True %}doesnt-exist{% elif printing.spanish_True.wont_collect %}wont-collect{% elif printing.spanish_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+
+                        <td class='{% if not printing.t_chinese_False %}doesnt-exist{% elif printing.t_chinese_False.wont_collect %}wont-collect{% elif printing.t_chinese_False.collected %}collected{% else %}not-collected{% endif %}'></td>
+                        <td class='{% if not printing.t_chinese_True %}doesnt-exist{% elif printing.t_chinese_True.wont_collect %}wont-collect{% elif printing.t_chinese_True.collected %}collected{% else %}not-collected{% endif %}'></td>
+                    </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endfor %}
